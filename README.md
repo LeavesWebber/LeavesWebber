@@ -1,6 +1,6 @@
 <p align="center"> 
   <a href="https://oksanye.com">
-  <img src="./LeavesWebber.svg" width="800" alt="LeavesWebber">
+  <img src="./leaveswebber.svg">
   </a>
 </p>
 
