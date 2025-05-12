@@ -1,77 +1,68 @@
-<!--?xml version="1.0" encoding="UTF-8"?-->
+/*
+Copyright © 2025 LeavesWebber
+
+SPDX-License-Identifier: MPL-2.0
+
+Feel free to contact LeavesWebber@outlook.com
+*/<?xml version="1.0" encoding="UTF-8"?>
 <svg width="100%" height="100%" viewBox="0 0 800 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<style>/***************************************************
- * Generated for LeavesWebber
- * Inspired by SVG Artista animations
- * MIT license (https://opensource.org/licenses/MIT)
- **************************************************/
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&amp;display=swap');
+    
+    /* 背景样式 */
+    svg {
+      background-color: #000;
+    }
 
-/* 描边动画 */
-@-webkit-keyframes animate-svg-stroke-1{0%{stroke-dashoffset:800px;stroke-dasharray:800px}100%{stroke-dashoffset:0;stroke-dasharray:800px}}
-@keyframes animate-svg-stroke-1{0%{stroke-dashoffset:800px;stroke-dasharray:800px}100%{stroke-dashoffset:0;stroke-dasharray:800px}}
+    /* 文字样式 - 完全保持与原HTML相同 */
+    text {
+      fill: url(#imagePattern);
+      font-family: "Protest Guerrilla", sans-serif;
+      font-size: 100px;
+      letter-spacing: 5px;
+      stroke: rgb(130, 217, 252);
+      stroke-width: 1px;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      filter: url(#glowFilter);
+    }
 
-/* 填充动画 */
-@-webkit-keyframes animate-svg-fill-1{0%{fill:transparent}100%{fill:url(#imagePattern)}}
-@keyframes animate-svg-fill-1{0%{fill:transparent}100%{fill:url(#imagePattern)}}
+    /* 在SVG中完全模拟HTML中10秒循环的动画 */
+    @keyframes strokeDash {
+      0%, 0.5% {
+        stroke-dashoffset: 0;
+      }
+      30%, 100% {
+        stroke-dashoffset: 1000;
+      }
+    }
 
-/* 循环反向动画 */
-@-webkit-keyframes animate-svg-stroke-reverse{0%{stroke-dashoffset:0}100%{stroke-dashoffset:800px}}
-@keyframes animate-svg-stroke-reverse{0%{stroke-dashoffset:0}100%{stroke-dashoffset:800px}}
+    /* 应用动画 */
+    #animatedText {
+      animation: strokeDash 10s ease infinite;
+    }
+  </style>
 
-/* 文本元素样式 */
-.svg-elem-1{
-  font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
-  font-size: 70px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  stroke: rgb(130, 217, 252);
-  stroke-width: 2px;
-  filter: url(#glowFilter);
-  -webkit-animation: 
-    animate-svg-stroke-1 3s ease-in-out 0s forwards,
-    animate-svg-fill-1 1.5s ease-in-out 1s forwards,
-    animate-svg-stroke-reverse 4s ease-in-out 6s infinite alternate;
-  animation: 
-    animate-svg-stroke-1 3s ease-in-out 0s forwards,
-    animate-svg-fill-1 1.5s ease-in-out 1s forwards,
-    animate-svg-stroke-reverse 4s ease-in-out 6s infinite alternate;
-}
-
-svg {
-  background-color: #000;
-}
-</style>
+  <!-- 定义图案和滤镜 -->
   <defs>
-    <!-- 模拟代码文本图案 -->
+    <!-- 图案定义 -->
     <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="400" height="400">
       <image href="https://iili.io/20FHSCN.png" x="0" y="0" width="400" height="400" />
     </pattern>
 
-    <!-- 多层发光效果 -->
-    <filter id="glowFilter" x="-30%" y="-30%" width="160%" height="160%">
-      <!-- 主要发光 -->
-      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />
-      <feFlood flood-color="#00ccff" flood-opacity="0.7" result="color"/>
-      <feComposite in="color" in2="blur" operator="in" result="glow"/>
-      
-      <!-- 第二层发光 -->
-      <feGaussianBlur in="glow" stdDeviation="10" result="secondaryBlur" />
-      <feFlood flood-color="#0088ff" flood-opacity="0.5" result="secondaryColor"/>
-      <feComposite in="secondaryColor" in2="secondaryBlur" operator="in" result="secondaryGlow"/>
-      
+    <!-- 发光滤镜 - 与原HTML完全相同 -->
+    <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blurred" />
+      <feOffset in="blurred" dx="0" dy="0" result="offsetBlurred" />
+      <feFlood flood-color="cyan" result="glowColor" />
+      <feComposite in="glowColor" in2="offsetBlurred" operator="in" />
       <feMerge>
-        <feMergeNode in="secondaryGlow"/>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
   </defs>
-  
-  <!-- 黑色背景 -->
-  <rect width="100%" height="100%" fill="#000" />
-  
-  <!-- 文本容器 -->
-  <g id="LeavesWebber-text">
-    <text class="svg-elem-1" x="400" y="120" text-anchor="middle">LeavesWebber</text>
-  </g>
+
+  <!-- 文本元素 -->
+  <text id="animatedText" x="50" y="150">LeavesWebber</text>
 </svg> 
