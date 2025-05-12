@@ -1,6 +1,6 @@
 <p align="center"> 
   <a href="https://oksanye.com">
-    <img src="https://raw.githubusercontent.com/LeavesWebber/LeavesWebber/refs/heads/main/LeavesWebber.svg">
+    <img src="./namesvg.svg" width="100%" alt="动画SVG" />
   </a>
 </p>
 
