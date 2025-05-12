@@ -1,4 +1,8 @@
-![LeavesWebber logo](./LeavesWebber.svg)
+<p align="center"> 
+  <a href="https://oksanye.com">
+    <img src="./LeavesWebber.svg">
+  </a>
+</p>
 
 ## Hi there 👋
 
