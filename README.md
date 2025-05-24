@@ -13,7 +13,7 @@ About Me:
 
 - Currently an undergraduate studying Cybersecurity in Xiamen (Amoy), China  
 
-- Passionate about frontend development.
+- Passionate about frontend development & DevOps.
 
 - Advocate for the open, shared, and connected internet spirit and the open-source movement.  
 
@@ -29,7 +29,7 @@ You can reach me on [my blog](https://oksanye.com).
 
 - 网络安全专业的本科在读学生，坐标福建厦门  
 
-- 热衷于前端开发
+- 热衷于前端开发和 DevOps
 
 - 推崇开放、共享、互联的互联网精神以及开源精神
 
